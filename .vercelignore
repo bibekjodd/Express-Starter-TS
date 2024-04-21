@@ -4,5 +4,6 @@
 !pnpm-lock.yaml
 !package-lock.json
 !yarn.lock
+!bun.lockb
 !vercel.json
 !.vercelignore

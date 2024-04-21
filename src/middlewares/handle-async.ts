@@ -1,11 +1,6 @@
 import { type RequestHandler } from 'express';
 
-type HandleAsync = <
-  Params = unknown,
-  ResBody = unknown,
-  ReqBody = unknown,
-  ReqQuery = unknown
->(
+type HandleAsync = <Params = unknown, ResBody = unknown, ReqBody = unknown, ReqQuery = unknown>(
   requestHandler: RequestHandler<Params, ResBody, ReqBody, ReqQuery>
 ) => typeof requestHandler;
 
