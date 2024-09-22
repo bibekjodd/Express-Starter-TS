@@ -27,6 +27,7 @@ export const validateEnv = () => {
   try {
     return envSchema.parse(process.env);
   } catch (error) {
+    if (error instanceof Error) console.log(error.message);
     console.log(`Environment variables validation failed\nExitting app`.red);
     process.exit(1);
   }
