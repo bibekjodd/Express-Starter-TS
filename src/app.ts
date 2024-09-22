@@ -6,7 +6,6 @@ import { NotFoundException } from './lib/exceptions';
 import { devConsole } from './lib/utils';
 import { handleAsync } from './middlewares/handle-async';
 import { handleErrorRequest } from './middlewares/handle-error-request';
-import { userRoute } from './routes/user.route';
 
 const app = express();
 validateEnv();
@@ -28,7 +27,6 @@ app.get(
 );
 
 /* --------- routes --------- */
-app.use('/api', userRoute);
 app.use(() => {
   throw new NotFoundException();
 });
