@@ -6,6 +6,7 @@ import { NotFoundException } from './lib/exceptions';
 import { devConsole } from './lib/utils';
 import { handleAsync } from './middlewares/handle-async';
 import { handleErrorRequest } from './middlewares/handle-error-request';
+import { openApiSpecs, serveApiReference } from './openapi';
 
 const app = express();
 validateEnv();
@@ -27,6 +28,10 @@ app.get(
 );
 
 /* --------- routes --------- */
+app.get('/doc', (req, res) => {
+  return res.json(openApiSpecs);
+});
+app.get('/reference', serveApiReference);
 app.use(() => {
   throw new NotFoundException();
 });

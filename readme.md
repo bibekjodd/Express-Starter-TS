@@ -12,6 +12,7 @@
 
 - #### Typesafe Environment variables and data validation with [Zod](https://zod.dev/) schema
 - #### Customizable path alias `@/*`
+- #### Api doc reference with [scalar](https://scalar.com/)
 
 ### Run Locally
 
@@ -24,19 +25,24 @@
 #### Install dependencies
 
 ```js
-  npm install
+  bun install
 ```
 
 #### Start the server
 
 ```js
- npm run build && npm run start
+ bun run build && bun start
  or
- npm run start
+ bun start
 ```
 
 #### Start development server
 
 ```js
-  npm run dev
+  bun dev
 ```
+
+#### Api Documentation
+
+- #### [OpenApiDoc](https://express-starter-typescript.vercel.app/doc)
+- #### [ReferenceUI](https://express-starter-typescript.vercel.app/reference)
