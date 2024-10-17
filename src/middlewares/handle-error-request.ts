@@ -26,5 +26,5 @@ export const handleErrorRequest: ErrorRequestHandler = (err, req, res, next) => 
     }
   }
 
-  return res.status(statusCode).json({ message });
+  res.status(statusCode).json({ message });
 };

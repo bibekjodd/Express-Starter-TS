@@ -4,7 +4,6 @@ import morgan from 'morgan';
 import { env, validateEnv } from './config/env.config';
 import { NotFoundException } from './lib/exceptions';
 import { devConsole } from './lib/utils';
-import { handleAsync } from './middlewares/handle-async';
 import { handleErrorRequest } from './middlewares/handle-error-request';
 import { openApiSpecs, serveApiReference } from './openapi';
 
@@ -16,23 +15,20 @@ if (env.NODE_ENV === 'development') {
   app.use(morgan('common'));
 }
 
-app.get(
-  '/',
-  handleAsync(async (req, res) => {
-    return res.json({
-      message: 'Api is running fine...',
-      env: env.NODE_ENV,
-      date: new Date().toISOString()
-    });
-  })
-);
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Api is running fine...',
+    env: env.NODE_ENV,
+    date: new Date().toISOString()
+  });
+});
 
 /* --------- routes --------- */
 app.get('/doc', (req, res) => {
-  return res.json(openApiSpecs);
+  res.json(openApiSpecs);
 });
 app.get('/reference', serveApiReference);
-app.use(() => {
+app.use(async () => {
   throw new NotFoundException();
 });
 app.use(handleErrorRequest);
