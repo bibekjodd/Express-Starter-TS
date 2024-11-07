@@ -33,9 +33,8 @@ app.use(async () => {
 });
 app.use(handleErrorRequest);
 
-if (env.NODE_ENV !== 'test') {
-  app.listen(env.PORT, () => {
-    devConsole(`⚡[Server]: listening at http://localhost:${env.PORT}`.yellow);
-  });
-}
+app.listen(env.PORT, () => {
+  devConsole(`⚡[Server]: listening at http://localhost:${env.PORT}`.yellow);
+});
+
 export default app;

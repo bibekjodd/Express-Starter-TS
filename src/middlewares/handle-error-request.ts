@@ -2,6 +2,7 @@ import { HttpException } from '@/lib/exceptions';
 import { ErrorRequestHandler } from 'express';
 import { ZodError } from 'zod';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const handleErrorRequest: ErrorRequestHandler = (err, req, res, next) => {
   let message = err.message || 'Internal Server Error';
   let statusCode = err.statusCode || 500;

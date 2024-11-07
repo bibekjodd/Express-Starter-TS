@@ -2,7 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ESNext",
+    "target": "esnext",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -14,9 +14,9 @@
     "noUncheckedIndexedAccess": true,
     "strictNullChecks": true,
 
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "lib": ["ESNext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["esnext"],
 
     "paths": {
       "@/*": ["./src/*"]

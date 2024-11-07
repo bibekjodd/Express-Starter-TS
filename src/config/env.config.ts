@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 const envSchema = z
   .object({
-    NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+    NODE_ENV: z.enum(['development', 'production', 'testing']).default('development'),
     PORT: z
       .union([z.string(), z.number()])
       .default(5000)
@@ -33,4 +33,3 @@ export const validateEnv = () => {
   }
 };
 export const env = validateEnv();
-export type EnvType = z.infer<typeof envSchema>;
